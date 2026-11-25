@@ -1,0 +1,52 @@
+{
+    "name": "n8n-nodes-salesforge",
+    "version": "0.1.0",
+    "description": "n8n community node for Salesforge sequences, contacts, threads, and Primebox labels",
+    "license": "MIT",
+    "homepage": "https://www.salesforge.ai",
+    "keywords": [
+        "n8n-community-node-package"
+    ],
+    "author": {
+        "name": "shukri",
+        "email": "shukri@mailforge.ai"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/SalesforgeAI/n8n-nodes-salesforge.git"
+    },
+   "scripts": {
+		"build": "n8n-node build",
+		"build:watch": "tsc --watch",
+		"dev": "n8n-node dev",
+		"lint": "n8n-node lint",
+		"lint:fix": "n8n-node lint --fix",
+		"test": "node --test test/**/*.test.cjs",
+		"release": "n8n-node release",
+		"prepublishOnly": "n8n-node prerelease"
+	},
+    "files": [
+        "dist"
+    ],
+    "n8n": {
+        "n8nNodesApiVersion": 1,
+        "strict": true,
+        "credentials": [
+            "dist/credentials/SalesforgeApi.credentials.js"
+        ],
+        "nodes": [
+            "dist/nodes/Salesforge/Salesforge.node.js",
+            "dist/nodes/SalesforgeTrigger/SalesforgeTrigger.node.js"
+        ]
+    },
+    "devDependencies": {
+        "@n8n/node-cli": "*",
+        "eslint": "9.32.0",
+        "prettier": "3.6.2",
+        "release-it": "^21.1.0",
+        "typescript": "5.9.2"
+    },
+    "peerDependencies": {
+        "n8n-workflow": "*"
+    }
+}
